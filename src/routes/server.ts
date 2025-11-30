@@ -1,4 +1,4 @@
-// src/main.ts
+// src/app/config/routes/server.ts
 //
 // Made with ❤️ by Maysara.
 
@@ -6,14 +6,23 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { server } from './core/server';
+    import { RouteDefinition, type AppContext } from '@je-es/server';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
 
 
-// ╔════════════════════════════════════════ CORE ════════════════════════════════════════╗
+// ╔════════════════════════════════════════ INIT ════════════════════════════════════════╗
 
-    server.start();
+    export const routes : RouteDefinition[] = [
+        {
+            method  : 'GET',
+            path    : '/',
+            handler: (c: AppContext) => {
+                return c.json({ message: 'Hello World!' });
+            }
+        },
+
+    ];
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝

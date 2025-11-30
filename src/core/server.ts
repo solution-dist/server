@@ -1,4 +1,4 @@
-// src/main.ts
+// src/core/server.ts
 //
 // Made with ❤️ by Maysara.
 
@@ -6,14 +6,16 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { server } from './core/server';
+    import { server as createServer }   from '@je-es/server';
+    import { config }                   from '../config/server';
+    import { routes }                   from '../routes/server';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
 
-
 // ╔════════════════════════════════════════ CORE ════════════════════════════════════════╗
 
-    server.start();
+    // create
+    export const server = createServer({ ...config, routes });
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝

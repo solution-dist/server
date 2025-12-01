@@ -1,4 +1,4 @@
-// src/app/config/server.ts
+// src/backend/config/index.ts
 //
 // Made with ❤️ by Maysara.
 
@@ -6,8 +6,7 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { type ServerConfig, } from '@je-es/server';
-    // import { todos } from './db';
+    import { ServerConfig } from '@je-es/server';
     import path from 'path';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,8 +20,8 @@
     const origin        = (process.env.CORS_ORIGINS             || `http://${hostname}:${port}`).split(',');
     const logLevel      = (process.env.LOG_LEVEL                || 'info') as any;
     const staticPath    = process.env.STATIC_PATH               || '/static';
-    const staticDir     = path.resolve(process.env.STATIC_DIR   || './src/static');
-    const dbName        = process.env.DATABASE_URL              || '{{name}}.db';
+    const staticDir     = path.resolve(process.env.STATIC_DIR   || './src/frontend/static');
+    // const dbName        = process.env.DATABASE_URL              || '{{name}}.db';
 
     export const config : ServerConfig = {
         port            : port,
@@ -60,14 +59,12 @@
             pretty      : true
         },
 
-        database        : {
-            connection  : dbName,
-            // schema      : { todos }
-        },
+        // database        : {
+        //     connection  : dbName,
+        //     schema      : { }
+        // },
 
-        onShutdown: async () => {
-            // console.log('Server shutting down gracefully...');
-        },
+        onShutdown: async () => { },
     };
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝

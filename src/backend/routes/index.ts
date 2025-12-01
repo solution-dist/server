@@ -1,4 +1,4 @@
-// src/app/config/db.ts
+// src/backend/config/routes/index.ts
 //
 // Made with ❤️ by Maysara.
 
@@ -6,16 +6,7 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import {
-        table,
-        integer,
-        text,
-        primaryKey,
-        notNull,
-        defaultValue,
-        unique,
-        references,
-    } from '@je-es/server';
+    import { RouteDefinition, type AppContext } from '@je-es/server';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
@@ -23,11 +14,15 @@
 
 // ╔════════════════════════════════════════ INIT ════════════════════════════════════════╗
 
-    // export const todos = table('todos', [
-    //     primaryKey(integer('id'), true),
-    //     notNull(text('title')),
-    //     text('text'),
-    //     defaultValue(text('created_at'), new Date().toISOString())
-    // ]);
+    export const routes : RouteDefinition[] = [
+        {
+            method  : 'GET',
+            path    : '/',
+            handler: (c: AppContext) => {
+                return c.json({ message: 'Hello World!' });
+            }
+        },
+
+    ];
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝

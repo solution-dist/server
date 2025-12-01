@@ -1,4 +1,4 @@
-// src/core/server.ts
+// src/backend/index.ts
 //
 // Made with ❤️ by Maysara.
 
@@ -7,8 +7,8 @@
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
     import { server as createServer }   from '@je-es/server';
-    import { config }                   from '../config/server';
-    import { routes }                   from '../routes/server';
+    import { config }                   from './config';
+    import { routes }                   from './routes';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 

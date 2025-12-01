@@ -49,6 +49,15 @@
                 space start                 # To start your server
                 ```
 
+                ```bash
+                # example
+                 > space start
+
+                # output
+                 16:16:31 ✓ Server started at http://localhost:3000
+                 16:17:25 GET / 200 4ms
+                 ...
+                ```
         <div align="center"> <img src="./assets/img/line.png" alt="line" style="display: block; margin-top:20px;margin-bottom:20px;width:500px;"/> <br> </div>
 
         - #### Structure

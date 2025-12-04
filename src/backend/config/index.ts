@@ -18,7 +18,7 @@
     const port          = process.env.PORT                      || 3000;
     const hostname      = process.env.HOSTNAME                  || 'localhost';
     const origin        = (process.env.CORS_ORIGINS             || `http://${hostname}:${port}`).split(',');
-    const logLevel      = (process.env.LOG_LEVEL                || 'info') as any;
+    const logLevel      = (process.env.LOG_LEVEL                || 'info') as 'error' | 'warn' | 'info' | 'debug';
     const staticPath    = process.env.STATIC_PATH               || '/static';
     const staticDir     = path.resolve(process.env.STATIC_DIR   || './src/frontend/static');
     // const dbName        = process.env.DATABASE_URL              || '{{name}}.db';
